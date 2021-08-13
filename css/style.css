@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  width: 100%;
+  max-width: 1120px;
   overflow-x: hidden;
   font-family: "TT Lakes", sans-serif;
 }
@@ -27,15 +27,16 @@ body {
   }
 }
 
-.container {
-  padding: 0 16px;
-  width: 100%;
-}
-/* ??? надо ли свойство, что внизу */
-
-@media (min-width: 1120px) {
+@media (max-width: 767px) {
   .container {
-    margin-right: 25px;
+    padding: 0 16px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px;
+    width: 100%;
   }
 }
 
@@ -48,27 +49,19 @@ body {
   width: 100%;
 }
 
-
 @media (min-width: 768px) {
-  .header {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 88px;
-    width: 100%;
-  }
-  .profile__btn, .call__btn, .repair__btn {
+  .button__link--profile, .button__link--call,
+  .button__link--repair {
     margin: 16px;
   }
   .logo {
     flex: 1 1 auto;
     margin-left: 16px;
   }
-  .divider:first-of-type {
-    margin-left: 16px;
+  .button__link--burger {
+    margin-right: 16px;
   }
-  .request__btn {
+  .button__link--request {
     margin-left: 16px;
   }
 }
@@ -79,7 +72,7 @@ body {
   }
 }
 
-.burger__btn {
+.button__link {
   width: 40px;
   height: 40px;
   border: none;
@@ -87,12 +80,12 @@ body {
   background-color: #FF3E79;
 }
 
-.logo {
+.header__logo {
   width: 97px;
   height: 51px;
 }
 
-.logo::after {
+.header__logo::after {
   content: "";
   width: 2px;
   height: 32px;
@@ -106,56 +99,16 @@ body {
 }
 
 @media (min-width: 768px) {
-  .logo::after {
+  .header__logo::after {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
-  .divider, .chat__btn,
-  .call__btn, .profile__btn {
+  .header__divider, .button__link--call,
+  .button__link--chat, .button__link--profile {
     display: none;
   }
-}
-
-@media (min-width: 768px) {
-  .call__btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: #FF3E79;
-  }
-  .chat__btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: #FF3E79;
-  }
-  .profile__btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: #FF3E79;
-  }
-}
-
-.request__btn {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #FF3E79;
-}
-
-.repair__btn {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #FF3E79;
 }
 
 .all {
@@ -188,6 +141,7 @@ body {
   line-height: 40px;
   margin-left: 20px;
   margin-top: 0;
+  margin-bottom: 18px;
 }
 
 @media (max-width: 1120px) {
@@ -205,6 +159,7 @@ body {
   .headline__button {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   .headline__title {
     margin-left: 20px;
@@ -229,17 +184,14 @@ body {
 
 /* СКРОЛЛЫ*/
 
-.option {
-    overflow-x: auto;
+@media (max-width: 1119px) {
+  .option {
     width: 100%;
     height: 40px;
   }
-
-@media (min-width: 768px) {
-  .option {
-    overflow-x: auto;
-    width: 100%;
-    height: 40px;
+  .menu {
+    display: flex;
+    overflow-x: scroll;
   }
 }
 
@@ -249,22 +201,20 @@ body {
     width: 1120px;
     height: 90px;
   }
-}
-
-@media (min-width: 1120px) {
   .menu {
-  display: flex;
-  flex-wrap: wrap;
-  font-family: "TT Lakes", sans-serif;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "TT Lakes", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    list-style-type: none;
   }
 }
 
-.menu__device:first-child {
+/*
+.menu__link--device:first-child {
   background-color: white;
   width: 246px;
   height: 40px;
@@ -272,62 +222,44 @@ body {
   border-radius: 6px;
   color: #7E7E82;
 }
+ */
 
-
-@media (min-width: 1120px) {
-  .menu__device {
-    width: 254px;
-    height: 40px;
-    border: none;
-    background-color: #f8f8f8;
-    flex: 0 0 254px;
-    color: #7E7E82;
-  }
-}
-
-.menu__service {
-  width: 211px;
-  height: 40px;
+.menu__link {
   border: none;
   background-color: #f8f8f8;
+  color: #7E7E82;
+  height: 40px;
+  cursor: pointer;
+}
+
+.menu__link:hover {
+  background-color: white;
+  border: 2px solid #B8FFEC;
+  border-radius: 6px;
+}
+
+.menu__link--device {
+  flex: 0 0 254px;
+}
+
+.menu__link--service {
   flex: 0 0 211px;
-  color: #7E7E82;
 }
 
-.menu__price {
-  width: 152px;
-  height: 40px;
-  border: none;
-  background-color: #f8f8f8;
+.menu__link--price {
   flex: 0 0 152px;
-  color: #7E7E82;
 }
 
-.menu__address {
-  width: 233px;
-  height: 40px;
-  border: none;
-  background-color: #f8f8f8;
+.menu__link--address {
   flex: 0 0 233px;
-  color: #7E7E82;
 }
 
-.menu__sprice {
-  width: 191px;
-  height: 40px;
-  border: none;
-  background-color: #f8f8f8;
+.menu__link--sprice {
   flex: 0 0 191px;
-  color: #7E7E82;
 }
 
-.menu__response {
-  width: 95px;
-  height: 40px;
-  border: none;
-  background-color: #f8f8f8;
+.menu__link--response {
   flex: 0 0 95px;
-  color: #7E7E82;
 }
 
 /*
@@ -407,7 +339,7 @@ body {
   }
 }
 
-.read__inner {
+.read {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -424,13 +356,6 @@ body {
   background-color: #f8f8f8;
 }
 
-/*
-.photo {
-  width: 320px;
-  height: 176px;
-}
-*/
-
 @media (max-width: 767px) {
   .text {
     display: flex;
@@ -444,12 +369,20 @@ body {
     width: 288px;
     margin-bottom: 15px;
   }
-  .photo {
-    width: 100%;
+  .text__photo {
+    width: 287px;
     height: 176px;
-    margin-left: -20px;
+    margin-left: 8px;
   }
 }
+
+.text__more {
+  cursor: pointer;
+}
+.read__title {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .text {
     display: flex;
@@ -460,13 +393,13 @@ body {
     height: 208px;
     margin-left: 20px;
   }
-  .read__inner {
+  .read {
     margin-top: auto;
   }
   .text__info {
     margin-right: 45px;
   }
-  .photo {
+  .text__photo {
     border-radius: 5px;
     width: 360px;
     height: 208px;
@@ -485,13 +418,13 @@ body {
     height: 307px;
     margin-left: 20px;
   }
-  .read__inner {
+  .read {
     margin-top: auto;
   }
   .text__info {
     margin-right: 35px;
   }
-  .photo {
+  .text__photo {
     border-radius: 5px;
     width: 532px;
     height: 307px;
