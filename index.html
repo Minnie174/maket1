@@ -8,55 +8,53 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="page-layout">
     <header class="header">
-      <nav class="header__burger button">
-        <button class="button__link button__link--burger">
+      <div class="header__icon button-link">
+        <button class="button-link__button button__link--burger">
           <img src="src/burger.svg" alt="menu">
         </button>
-      </nav>
-      <img class="header__divider" src="src/divider.svg" alt="">
-      <div class="header__logo logo">
-        <a class="logo__link" href="#">
-          <img src="src/Group.svg" alt="logo">
-        </a>
+        <div class="button-link__logo logo">
+          <a class="logo__link" href="#">
+            <img src="src/Group.svg" alt="logo">
+          </a>
+        </div>
       </div>
-      <button class="button__link button__link--call">
-        <img src="src/call.svg" alt="call">
-      </button>
-      <button class="button__link button__link--chat">
-        <img src="src/chat.svg" alt="chat">
-      </button>
-      <button class="button__link button__link--profile">
-        <img src="src/profile.svg" alt="profile">
-      </button>
-      <img class="header__divider" src="src/divider.svg" alt="">
-      <button class="button__link button__link--request">
+      <div class="header__icon button-link">
+        <button class="button-link__button button-link__button--call">
+          <img src="src/call.svg" alt="call">
+        </button>
+        <button class="button-link__button button-link__button--chat">
+          <img src="src/chat.svg" alt="chat">
+        </button>
+        <button class="button-link__button button-link__button--profile">
+          <img src="src/profile.svg" alt="profile">
+        </button>
+        <button class="button-link__button button-link__button--request">
         <img src="src/repair.svg" alt="request">
-      </button>
-      <button class="button__link button__link--repair">
-        <img src="src/sheet.svg" alt="sheet">
-      </button>
+        </button>
+        <button class="button-link__button button-link__button--repair">
+          <img src="src/sheet.svg" alt="sheet">
+        </button>
+      </div>
     </header>
-  </div>
-  <main class="all">
-    <section class="headline">
-      <h5 class="headline__title">
+  <main class="page-layout__mine mine">
+    <section class="mine__headline headline">
+      <h1 class="headline__title">
         Услуги и сервисы
-      </h5>
-      <div class="headline__button button">
+      </h1>
+      <div class="headline__button button-link">
         <span>Оставить заявку</span>
-        <button class="button__link button__link--request">
+        <button class="button-link__button button-link--request">
           <img src="src/repair.svg" alt="">
         </button>
         <span>Статус ремонта</span>
-        <button class="button__link button__link--repair">
+        <button class="button-link__button button-link--repair">
           <img src="src/sheet.svg" alt="">
         </button>
       </div>
     </section>
-    <div class="container">
-      <section class="option">
+      <section class="mine__option option">
         <div class="option__menu menu">
           <button class="menu__link menu__link--device">
             Ремонтируемые устройства
@@ -78,9 +76,8 @@
           </button>
         </div>
       </section>
-    </div>
-    <section class="text">
-      <div class="text__info">
+    <section class="mine__info info">
+      <div class="info__text">
         <p>
           Мы являемся авторизованным
           сервисным центром по ремонту техники
@@ -99,7 +96,7 @@
           обращаются по рекомендациям и, в свою очередь, советуют нас
           родным и близким.
         </p>
-        <div class="text__more read">
+        <div class="info__more read">
           <div class="read__arrow">
             <img src="src/expand.svg" alt="">
           </div>
@@ -108,8 +105,11 @@
           </button>
         </div>
       </div>
-      <img class="text__photo" src="src/logo.png" alt="photo">
+      <div class="info__photo">
+      <img class="info__photo-img" src="src/logo.png" alt="photo">
+      </div>
     </section>
   </main>
+  </div>
 </body>
 </html>
