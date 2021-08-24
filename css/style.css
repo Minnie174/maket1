@@ -7,44 +7,10 @@ html {
   box-sizing: inherit;
 }
 
-body {
-}
-
 .page-layout {
-  max-width: 1120px;
   overflow-x: hidden;
-  font-family: "TT Lakes", sans-serif;
+  font-family: TT Lakes, sans-serif;
 }
-
-/*
-@media (min-width: 768px) {
-  body {
-    min-width: 768px;
-    height: 504px;
-  }
-}
-
-
-@media (min-width: 1120px) {
-  body {
-    min-width: 1120px;
-    height: 535px;
-  }
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding: 0 16px;
-    width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    padding: 0 30px;
-    width: 100%;
-  }
-}
-*/
 
 .header {
   background-color: white;
@@ -76,11 +42,13 @@ body {
   border-radius: 50%;
   background-color: #FF3E79;
   margin-right: 16px;
+  cursor: pointer;
 }
 
 .button-link__logo {
   width: 97px;
   height: 51px;
+  cursor: pointer;
 }
 
 .header__icon:first-child::after {
@@ -139,6 +107,7 @@ body {
 .mine {
   background-color: #f8f8f8;
   width: 100%;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -228,10 +197,8 @@ body {
     width: 100%;
     height: 40px;
     margin: 24px;
-  }
-  .menu {
+    overflow: auto;
     display: flex;
-    overflow-x: scroll;
   }
   .menu::after {
     content: '';
@@ -247,11 +214,9 @@ body {
 @media (min-width: 1120px) {
   .option__menu {
     overflow-x: hidden;
-    width: 1120px;
+    width: 100%;
     height: 90px;
     margin: 24px 24px 0 24px;
-  }
-  .menu {
     display: flex;
     flex-wrap: wrap;
     font-weight: normal;
@@ -401,15 +366,13 @@ body {
 }
 
 .info__photo-img {
-  width: 320px;
-  height: 176px;
+  width: 100%;
+  height: auto;
+  max-width: 532px;
 }
 
 .info__photo {
   flex-grow: 1;
-  min-height: 176px;
-  max-height: 307px;
-  max-width: 532px;
 }
 
 @media (min-width: 320px) {
@@ -420,7 +383,7 @@ body {
     margin-left: 20px;
   }
   .info__text {
-    width: 288px;
+    width: 100%;
     margin-bottom: 15px;
   }
 }
@@ -446,18 +409,19 @@ body {
   }
   .info__text {
     margin-right: 50px;
-    width: 312px;
+    width: 100%;
+    flex: 1;
   }
   .info__photo {
-    max-width: 360px;
+    width: 100%;
+    max-width: 560px;
     margin-right: 25px;
   }
   .info__photo-img {
     border-radius: 6px;
-    width: 360px;
-    height: 208px;
+    width: 100%;
+    max-height: 250px;
     margin-top: 20px;
-    padding-bottom: 20px;
   }
 }
 
@@ -472,19 +436,21 @@ body {
   }
   .info__text {
     margin-right: 35px;
-    width: 490px;
+    width: 100%;
+    flex-grow: 1;
   }
   .info__photo {
-    max-width: 532px;
     margin-right: 40px;
   }
   .info__photo-img {
     border-radius: 5px;
     width: 100%;
-    height: 307px;
+    max-height: 407px;
     padding-bottom: 30px;
+    flex-grow: 1;
   }
   p {
     margin-bottom: 15px;
+    width: 100%;
   }
 }
