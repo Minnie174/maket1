@@ -8,7 +8,8 @@ html {
 }
 
 .page-layout {
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
   font-family: TT Lakes, sans-serif;
 }
 
@@ -200,6 +201,10 @@ html {
     overflow-x: auto;
     overflow-y: hidden;
     display: flex;
+    overflow-scrolling: transparent;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
   .menu::after {
     content: '';
